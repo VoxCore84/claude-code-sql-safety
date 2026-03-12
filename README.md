@@ -1,5 +1,7 @@
 # SQL Safety Guard for Claude Code
 
+![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue) ![License: MIT](https://img.shields.io/github/license/VoxCore84/claude-code-sql-safety) ![GitHub release](https://img.shields.io/github/v/release/VoxCore84/claude-code-sql-safety)
+
 **Block destructive database operations before they execute.**
 
 A [PreToolUse hook](https://docs.anthropic.com/en/docs/claude-code/hooks) for Claude Code that intercepts bash commands and MCP tool calls, catching dangerous SQL operations like `DROP TABLE`, `TRUNCATE`, and `DELETE` without `WHERE` before they reach your database. Fully configurable. Zero dependencies.
