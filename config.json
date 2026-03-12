@@ -1,0 +1,49 @@
+{
+  "trigger_keywords": [
+    "mysql",
+    "psql",
+    "sqlite3",
+    "mongosh",
+    ".sql"
+  ],
+  "mcp_tool_patterns": [
+    "mysql",
+    "sql",
+    "database",
+    "db"
+  ],
+  "dangerous_patterns": [
+    {
+      "pattern": "\\bDROP\\s+TABLE\\b",
+      "label": "DROP TABLE"
+    },
+    {
+      "pattern": "\\bDROP\\s+DATABASE\\b",
+      "label": "DROP DATABASE"
+    },
+    {
+      "pattern": "\\bTRUNCATE\\b",
+      "label": "TRUNCATE"
+    },
+    {
+      "pattern": "\\bDELETE\\s+FROM\\s+\\S+\\s*;",
+      "label": "DELETE without WHERE clause"
+    },
+    {
+      "pattern": "\\bDELETE\\s+FROM\\s+\\S+\\s*$",
+      "label": "DELETE without WHERE clause"
+    },
+    {
+      "pattern": "\\bUPDATE\\s+\\S+\\s+SET\\s+(?!.*\\bWHERE\\b).*[;$]",
+      "label": "UPDATE without WHERE clause"
+    },
+    {
+      "pattern": "\\bALTER\\s+TABLE\\s+\\S+\\s+DROP\\s+COLUMN\\b",
+      "label": "ALTER TABLE DROP COLUMN"
+    }
+  ],
+  "safe_overrides": [
+    "DROP\\s+TABLE\\s+IF\\s+EXISTS.*CREATE\\s+TABLE",
+    "DROP\\s+TEMPORARY\\s+TABLE"
+  ]
+}

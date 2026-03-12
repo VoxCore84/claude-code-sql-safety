@@ -1,0 +1,33 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python /path/to/sql-safety.py"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__mysql",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python /path/to/sql-safety.py"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__postgres",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python /path/to/sql-safety.py"
+          }
+        ]
+      }
+    ]
+  }
+}
