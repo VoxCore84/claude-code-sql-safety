@@ -111,7 +111,7 @@ def extract_sql_text(tool_name, tool_input):
     if tool_name == "Bash":
         return tool_input.get("command", "")
 
-    # MCP database tools — check common parameter names for SQL content
+    # MCP database tools -- check common parameter names for SQL content
     sql_param_names = ["query", "sql", "statement", "command", "queries", "input"]
     for param_name in sql_param_names:
         value = tool_input.get(param_name, "")
@@ -138,7 +138,7 @@ def main():
     try:
         data = json.load(sys.stdin)
     except (json.JSONDecodeError, EOFError):
-        # Malformed input — don't block, just exit
+        # Malformed input -- don't block, just exit
         sys.exit(0)
 
     tool_name = data.get("tool_name", "")
@@ -158,11 +158,11 @@ def main():
     if is_bash:
         command = tool_input.get("command", "")
         if not is_database_bash_command(command, trigger_keywords):
-            # Not a database command — allow
+            # Not a database command -- allow
             sys.exit(0)
 
     if not is_bash and not is_mcp_db:
-        # Not a tool we care about — allow
+        # Not a tool we care about -- allow
         sys.exit(0)
 
     # Extract the SQL text to analyze
@@ -189,7 +189,7 @@ def main():
         json.dump(result, sys.stdout)
         sys.exit(0)
 
-    # No dangerous patterns found — allow
+    # No dangerous patterns found -- allow
     sys.exit(0)
 
 
