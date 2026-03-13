@@ -1,6 +1,6 @@
 # SQL Safety Guard for Claude Code
 
-![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue) ![License: MIT](https://img.shields.io/github/license/VoxCore84/claude-code-sql-safety) ![GitHub release](https://img.shields.io/github/v/release/VoxCore84/claude-code-sql-safety)
+![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue) ![License: MIT](https://img.shields.io/github/license/VoxCore84/claude-code-sql-safety) ![GitHub release](https://img.shields.io/github/v/release/VoxCore84/claude-code-sql-safety)
 
 **Block destructive database operations before they execute.**
 
@@ -17,7 +17,7 @@ This hook inspects every `Bash` tool call (and optionally MCP database tool call
 ## What It Blocks
 
 | Pattern | Example |
-|---------|---------|
+|---------|--------|
 | `DROP TABLE` | `DROP TABLE users;` |
 | `DROP DATABASE` | `DROP DATABASE production;` |
 | `TRUNCATE` | `TRUNCATE TABLE logs;` |
